@@ -6,14 +6,6 @@ set(SOURCES src/perlin.cpp src/perlin.hpp)
 
 set(CMAKE_CXX_STANDARD 20)
 
-if (MSVC)
-    add_compile_options(/std:c++20)
-else()
-    add_compile_options(-Wall -Wpedantic -std=c++2a)
-endif()
-
-add_compile_options(-lpng)
-
 add_executable(PerlinImpl ${SOURCES} "tests/main.cpp")
 
 find_package(PNG REQUIRED)
