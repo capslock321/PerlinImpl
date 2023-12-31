@@ -14,11 +14,7 @@ namespace PerlinImpl {
 
 
 	class Perlin2D {
-		std::vector<int> permutations;
 	public:
-		int width;
-		int height;
-
 		double generate_noise(int x, int y, int octaves = 8);
 
 		double lerp(double a, double b, double x);
@@ -26,6 +22,11 @@ namespace PerlinImpl {
 
 		Perlin2D(int x_size, int y_size, int seed = std::time(nullptr)) :
 			width(x_size), height(y_size), permutations(create_permutations(seed)) {}
+
+		int width;
+		int height;
+
+		std::vector<int> permutations;
 
 	private:
 		std::vector<int> create_permutations(int seed);
